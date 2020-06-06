@@ -1,0 +1,134 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+a{
+	text-decoration: none;
+}
+body{ 
+	background-image:url("../boi_bilder/hintergrund.png"); 
+	background-attachment: fixed;
+	font-family: arial;
+	background-size: cover;
+}
+hr {
+	border: 1px solid black;
+	margin: 0px;
+}
+aside {
+	float: right;
+}
+select{
+	width: 175px;
+}
+img{
+	width: 90%;
+
+}
+h1{
+  text-align: center;
+}
+/*********************************/
+.greybackground {
+    background-color: rgba(128,128,128,0.8);
+	 margin-left: 20%;
+	 margin-right: 20%;
+	 border-radius: 10px;
+	 padding: 15px 0px 15px 0px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 600px;
+    width: 1250px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    margin-left: 350px;
+	background-color: rgba(128,128,128,0.8);
+	color: white;
+	text-decoration: none;
+}
+.item1 {
+	padding: 10px;
+	font-size: 10px;
+	text-align: center;
+}
+.item2 {
+	padding: 10px;
+	font-size: 10px;
+	text-align: center;
+}
+.item3 {
+	padding: 10px;
+	font-size: 10px;
+	text-align: center;
+}
+.item4 {
+	padding: 10px;
+	font-size: 10px;
+	text-align: center;
+}
+.item5 {
+	padding: 10px;
+	font-size: 10px;
+	text-align: center;
+}
+.item6 {
+	padding: 10px;
+	font-size: 10px;
+	text-align: center;
+}
+.item7 {
+	padding: 10px;
+	font-size: 10px;
+	text-align: center;
+}
+.item8 {
+	padding: 10px;
+	font-size: 10px;
+	text-align: center;
+}
+.item9 {
+	padding: 10px;
+	font-size: 10px;
+	text-align: center;
+}
+.item10 {
+	padding: 10px;
+	font-size: 10px;
+	text-align: center;
+}
+/*********************************/
+#headline{
+	color: black;
+	text-align: center;
+	margin-top: 90px;
+}
+#auswahl{
+	margin-left: 12%;
+	font-size: larger;
+	color: white;
+}
+#search{
+	background-color: blue;
+	color: white;
+	border-radius: 10px;
+	padding: 10px 100px 10px 100px;
+	width: 100%;
+}
+#find{
+	width: 260px;
+    height: 40px;
+    border: 2px solid #999;
+    border-radius: 5px;
+    font-size: 1.0em;
+    transition: width 0.5s ease-in-out;
+    align-content: center;
+    margin: 10px 5px;
+	padding: 5px;
+	background-color: rgba(255, 255, 255);
+}
+
+
+
