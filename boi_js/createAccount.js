@@ -16,9 +16,9 @@ const handleFormSubmit = event => {
 	const data = formToJSON(form.elements);
 	console.log(data)
 	var xhr = new XMLHttpRequest();
-	var url = "http://localhost:8000/api/benutzer";
+	var url = "http://localhost:8000/api/register";
 	xhr.open("POST", url, true);
-	//xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.setRequestHeader("Content-Type", "application/json");
 	xhr.send(data)
 };
 
