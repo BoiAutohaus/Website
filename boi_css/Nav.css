@@ -13,6 +13,11 @@
   transition: 0.2s ease-in;
   color: rgb(185, 182, 182);
 }
+
+p{
+	color: white;
+	font-size: larger;
+}
 /********************************/
 #left{
 	text-align: left;
@@ -23,10 +28,9 @@
     border-radius: 0.5em;
     font-size: 1.2em;
 	transition: width 0.5s ease-in-out;
-	align-content: center;
-	margin-left: 0px;
+	margin: 0px 50%;
 	padding-left: 10px;
-	margin-top: -5px;
+	
 }
 #leiste{
 	letter-spacing: 3px;
@@ -50,3 +54,52 @@
 	font-size: medium;
 	float:left;
 }
+
+/********Footer***************/
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.8);
+    color: white;
+    text-align: center;
+	font-size: medium;
+	position: fixed;
+	
+	
+ }
+.fa {
+    padding: 5px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px;
+	border-radius: 10px;
+	
+  }
+ .fa-instagram {
+    background: #125688;
+    color: white;
+ }
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+#agb{
+
+color: white;
+text-decoration: none;
+}
+
+
+/********************************/

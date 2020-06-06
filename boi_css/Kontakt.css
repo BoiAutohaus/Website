@@ -9,10 +9,7 @@ body{
 	font-family: arial;
 	background-size: cover;	
 	}
-hr{
-	border: 1px solid black;
-	margin: 0px;
-}
+
 select{
 	width: 175px;
 }
@@ -24,9 +21,7 @@ h2 {
     color: white;
 	text-align: center;
 }
-p{
-	color: white;
-}
+
 /********************************/
 .greybackground {
     background-color: rgba(128,128,128,0.8);

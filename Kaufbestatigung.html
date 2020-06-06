@@ -5,18 +5,19 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="boi_bilder/favicon.ico" type="image/png">
-
-	<link rel="stylesheet" type="text/css" href="boi_css/Kontakt.css">
+	
 	<link rel="stylesheet" type="text/css" href="boi_css/Home.css">
 	<link rel="stylesheet" type="text/css" href="boi_css/Nav.css">
+	
 	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<!-- Social Media -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
 	<header>
 		<nav class="navbar bg-light sticky-top">
@@ -27,7 +28,6 @@
 			
 			<aside id="leiste">
 				<button class="btn btn-primary" type="button" onclick="window.location.href = 'Login.html';">Login/Signup</button>
-				<!--<a href="login.html" style="color:blue;background:grey;border-radius:5px;">Login/Signup</a>-->
 			</aside>
 		</nav>
 		<nav class="topnav navbar sticky-top">
@@ -38,11 +38,14 @@
 				<div id= "slogan"><b>Boi Autohaus</b><br>
 				<i>A big Boi for every boy</i>						
 				</div>
+				
 			</div>
-
-			<form class="form-inline">
-				<input class="form-control mr-sm-2" type="search" id="suche" placeholder="Mercedes Benz, …" aria-label="Search"></div>
-			</form>
+			<div>  
+				<form class="form-inline" >
+					<input class="form-control mr-sm-2" type="search" id="suche" placeholder="Mercedes Benz, …" aria-label="Search"></div>
+				</form>
+			</div>
+			
 			
 			<aside id="leiste">
 				<a href="Home.html">Home</a>
@@ -53,49 +56,72 @@
 			</aside>
 		</nav>
 	</header>
-
-
-
-<div id="main2">
-	<h1 id="headline">Über uns</h1> <br>
-
-	<div class="greybackground" id="textbox">
-        
-        <p>
-            <i>boihaus.de</i> bietet mit mehr als 1,5 Millionen insertierten PKW, Nutzfahrzeugen
-            und Motorräder das größte Angebot für den An- und Verkauf von Fahrzeugen in Deutschland
-            (Quelle: BOI-Institut).
-        </p>
-        <p>
-            Zur <i>Boihaus AG</i> gehört neben dem deutschen Marktführer <i>boihaus.de</i>
-            u.a. Europas größter Autocommunity MOTOR-TALK.
-        </p>
-        <p>
-            Zusammen erreichen beide Plattformen rund 16 Millionen Unique User 
-            (Quelle: BOI digitial facts 2019-06). Das 2018 gegründete Unternehmen beschäftigt 4 Mitarbeiter an zwei Standorten und 
-            ist ein Boiunternehmen der eBoi Classfieds Group.
-        </p>
-        
-        <p>
-            Zu den <i>boihaus.de</i> Nutzern gehören sowohl Privatkunden als auch ca. 42.000 registierten Fahrzeughändler, 
-            während MOTOR-TALK über 2,9 Millionen registierte Nutzer verzeichnet.
-        </p>
-             
-        
-        
-	</div>    
 	
-	<div class="footer">
-		<p>Boihaus auf Social Media</p>
-		<a href="https://www.instagram.com/?hl=de" class="fa fa-instagram"></a>
-		<a href="https://de-de.facebook.com/" class="fa fa-facebook"></a>
-		<a href="https://twitter.com/explore" class="fa fa-twitter"></a>
-		<a href="https://www.youtube.com/" class="fa fa-youtube"></a>
-		<br> <br>
-			&#169; 2020. | BOIHAUS AG Alle Rechte vorbehalten |<a id="agb" href="https://www.hs-albsig.de/"> Rechtliche Hinweise</a> |
+
+
+	<div id="main2">
+		<h1 id="headline">Kaufbestätigung</h1><br>
+
+		<div class="greybackground">
+			<table id="auswahl" cellspacing="25">
+				<tr>
+					<th>
+						Danke für Ihren Kauf, $NamevonKäufer!<br>Ihre Bestellung ist bestätigt.<br><br>
+					</th>
+
+					<th><br>
+						
+					</th>
+
+					
+				</tr>
+				<tr>
+					<th>Ihr Modell:<br><br>
+					
+					</th>
+
+					<th>$Markenname<br><br>
+						
+					</th>
+
+                    <th>$Modellname<br><br>
+                    </th>
+
+                    <th>$Preis<br><br></th>
+                        
+						
+					
+				</tr>
+				<tr>
+					<th>Ihre Daten:<br>
+                    </th>
+                    <th>$NamevonKäufer</th>
+                    <th>$AdressevonKäufer</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>Ihr Wagen wird zu Ihnen<br>nach Hause gebracht.</th>
+                </tr>
+                    <th></th>
+                    
+                    <th ><br><a id=search href="Home.html">Bestätigung drucken</a></th>
+                    
+                    <th></th>
+
+					
+				</tr>
+			</table>
+		</div>
+		<div class="footer">
+			<p>Boihaus auf Social Media</p>
+			<a href="https://www.instagram.com/?hl=de" class="fa fa-instagram"></a>
+			<a href="https://de-de.facebook.com/" class="fa fa-facebook"></a>
+			<a href="https://twitter.com/explore" class="fa fa-twitter"></a>
+			<a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+			<br> <br>
+				&#169; 2020. | BOIHAUS AG Alle Rechte vorbehalten | <a id="agb" href="https://www.hs-albsig.de/"> Rechtliche Hinweise</a> 
+		|</div>
 	</div>
-</div>
-
-
 </body>
+
 </html>
