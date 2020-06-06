@@ -14,12 +14,13 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
 const handleFormSubmit = event => {
 	event.preventDefault();
 	const data = formToJSON(form.elements);
-	console.log(data)
+	var myJSON = JSON.stringify(data);
+	console.log(myJSON);
 	var xhr = new XMLHttpRequest();
 	var url = "http://localhost:8000/api/register";
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-Type", "application/json");
-	xhr.send(data)
+	xhr.send(myJSON)
 };
 
 const form = document.getElementsByClassName('regform')[0];
