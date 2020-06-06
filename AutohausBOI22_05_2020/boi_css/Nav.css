@@ -1,0 +1,105 @@
+.topnav {
+	overflow: hidden;
+	background-color: white;
+}
+
+.topnav a {  
+  color: black;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  transition: 0.2s ease-in;
+  color: rgb(185, 182, 182);
+}
+
+p{
+	color: white;
+	font-size: larger;
+}
+/********************************/
+#left{
+	text-align: left;
+}
+#suche{
+    width: 20em;
+    border: 2px solid #999;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+	transition: width 0.5s ease-in-out;
+	margin: 0px 50%;
+	padding-left: 10px;
+	
+}
+#leiste{
+	letter-spacing: 3px;
+	margin: -25px 10px;
+	float: right;
+}
+#boilogo{
+	width: 150px;
+	margin-right: 15px;
+	float: left;
+	padding: 0px;	
+}
+#logo:hover{
+	opacity: 0.5;
+}
+#wrapper{
+	overflow:hidden;
+}
+#slogan{
+	font-family: serif; 
+	font-size: medium;
+	float:left;
+}
+
+/********Footer***************/
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.8);
+    color: white;
+    text-align: center;
+	font-size: medium;
+	position: fixed;
+	
+	
+ }
+.fa {
+    padding: 5px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px;
+	border-radius: 10px;
+	
+  }
+ .fa-instagram {
+    background: #125688;
+    color: white;
+ }
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+#agb{
+
+color: white;
+text-decoration: none;
+}
+
+
+/********************************/
