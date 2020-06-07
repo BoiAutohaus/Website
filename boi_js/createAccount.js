@@ -28,7 +28,7 @@ const handleAnSubmit = event => {
 	var myJSON = JSON.stringify(data);
 	console.log(myJSON);
 	var xhr = new XMLHttpRequest();
-	var url = "http://localhost:8000/api/anmelden";
+	var url = "http://localhost:8000/api/login";
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-Type", "application/json");
 	xhr.send(myJSON)
@@ -36,5 +36,5 @@ const handleAnSubmit = event => {
 const form = document.getElementsByClassName('regform')[0];
 form.addEventListener('submit', handleFormSubmit);
 
-const form = document.getElementsByClassName('anform')[0];
-form.addEventListener('submit', handleAnSubmit);
+const form1 = document.getElementsByClassName('anform')[0];
+form1.addEventListener('submit', handleAnSubmit);
