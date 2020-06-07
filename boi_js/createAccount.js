@@ -22,7 +22,7 @@ const handleFormSubmit = event => {
 	xhr.setRequestHeader("Content-Type", "application/json");
 	xhr.send(myJSON)
 };
-const handleFormSubmit = event => {
+const handleAnSubmit = event => {
 	event.preventDefault();
 	const data = formToJSON(form.elements);
 	var myJSON = JSON.stringify(data);
