@@ -29,7 +29,7 @@ const handleAnSubmit = event => {
 	console.log(myJSON);
 	var xhr = new XMLHttpRequest();
 	var url = "http://localhost:8000/api/login";
-	xhr.open("POST", url, true);
+	xhr.open("GET", url, true);
 	xhr.setRequestHeader("Content-Type", "application/json");
 	xhr.send(myJSON)
 };
