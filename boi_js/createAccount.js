@@ -22,7 +22,19 @@ const handleFormSubmit = event => {
 	xhr.setRequestHeader("Content-Type", "application/json");
 	xhr.send(myJSON)
 };
-
+const handleFormSubmit = event => {
+	event.preventDefault();
+	const data = formToJSON(form.elements);
+	var myJSON = JSON.stringify(data);
+	console.log(myJSON);
+	var xhr = new XMLHttpRequest();
+	var url = "http://localhost:8000/api/anmelden";
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.send(myJSON)
+};
 const form = document.getElementsByClassName('regform')[0];
 form.addEventListener('submit', handleFormSubmit);
 
+const form = document.getElementsByClassName('anform')[0];
+form.addEventListener('submit', handleAnSubmit);
