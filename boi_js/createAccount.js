@@ -20,7 +20,7 @@ const handleFormSubmit = event => {
 	var url = "http://localhost:8000/api/register";
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-Type", "application/json");
-	xhr.send(myJSON)
+	xhr.send(myJSON);
 };
 const handleAnSubmit = event => {
 	event.preventDefault();
@@ -31,7 +31,7 @@ const handleAnSubmit = event => {
 	var url2 = "http://localhost:8000/api/login";
 	xhr2.open("GET", url2, true);
 	xhr2.setRequestHeader("Content-Type", "application/json");
-	xhr2.send(myJSON2)
+	xhr2.send(myJSON2);
 };
 const form = document.getElementsByClassName('regform')[0];
 form.addEventListener('submit', handleFormSubmit);
