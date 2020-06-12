@@ -5,7 +5,8 @@ const isValidElement = element => {
 const formToJSON = elements => [].reduce.call(elements, (data, element) => {
   // Make sure the element has the required properties.
     if (isValidElement(element) ) {
-    data[element.name] = element.value;
+	data[element.name] = element.value;
+	
   }
   return data;
 }, {});
@@ -21,6 +22,13 @@ const handleFormSubmit = event => {
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-Type", "application/json");
 	xhr.send(myJSON);
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && xhr.status === 200) {
+			var json1 = JSON.parse(xhr.responseText);
+			window.alert(json1.email + json1.password);
+		}
+	};
+	
 };
 const handleAnSubmit = event => {
 	event.preventDefault();
@@ -32,6 +40,8 @@ const handleAnSubmit = event => {
 	xhr2.open("POST", url2, true);
 	xhr2.setRequestHeader("Content-Type", "application/json");
 	xhr2.send(myJSON2);
+
+
 };
 const form = document.getElementsByClassName('regform')[0];
 form.addEventListener('submit', handleFormSubmit);
