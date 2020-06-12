@@ -15,6 +15,7 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
 const handleFormSubmit = event => {
 	event.preventDefault();
 	const data = formToJSON(form.elements);
+	//var datajson= JSON(data);
 	var myJSON = JSON.stringify(data);
 	console.log(myJSON);
 	var xhr = new XMLHttpRequest();
@@ -25,11 +26,17 @@ const handleFormSubmit = event => {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && xhr.status === 200) {
 			var json1 = JSON.parse(xhr.responseText);
-			window.alert(json1.email + json1.password);
+			window.alert(data.vorname + " " +  data.nachname + ", Sie haben sich " +json1.email + json1.password);
+			}
+		else if(xhr.readyState === 4 && xhr.status === 400) {
+			var json2 = JSON.parse(xhr.responseText);
+			console.log("We got here kek");
+			window.alert("Error: "+ json2.respo);
+			}
+		
 		}
 	};
 	
-};
 const handleAnSubmit = event => {
 	event.preventDefault();
 	const data2 = formToJSON(form1.elements);
