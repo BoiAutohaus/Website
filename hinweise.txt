@@ -1,0 +1,4 @@
+wir haben dei Login Seite dynamisiert also registrieren und login,
+wobei bei registrieren auch eine rückmeldung kommt.
+Was verändert wurde ist: Frontend: login.html, boi_js\createAccount.js
+			Backend: services\register.js , dao\registerDAO.js , db\boi.sqlite
