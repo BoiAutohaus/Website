@@ -47,7 +47,20 @@ const handleAnSubmit = event => {
 	xhr2.open("POST", url2, true);
 	xhr2.setRequestHeader("Content-Type", "application/json");
 	xhr2.send(myJSON2);
-};
+	xhr2.onreadystatechange = function () {
+		if (xhr2.readyState === 4 && xhr2.status === 200) {
+			var json1 = JSON.parse(xhr2.responseText);
+			window.alert(data2.mail + ", Sie haben sich efolgreich angemeldet "+ json1.mail  );
+			}
+		else if(xhr2.readyState === 4 && xhr2.status === 400) {
+			var json2 = JSON.parse(xhr2.responseText);
+			console.log("We got here kek");
+			window.alert("Error: Passwort oder Email falsch " /*  +  json2.antwort2*/ );
+			}
+		
+		}
+	};
+
 const form = document.getElementsByClassName('regform')[0];
 form.addEventListener('submit', handleFormSubmit);
 
