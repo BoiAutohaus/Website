@@ -17,7 +17,7 @@ const isValidElement = element => {
       var myJSON = JSON.stringify(data);
       console.log(myJSON);
       var xhr = new XMLHttpRequest();
-      var url = "http://localhost:8000/api/register";
+      var url = "http://localhost:8000/api/login";
       xhr.open("POST", url, true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.send(myJSON)

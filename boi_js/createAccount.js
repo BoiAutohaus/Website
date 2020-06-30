@@ -47,8 +47,6 @@ const handleAnSubmit = event => {
 	xhr2.open("POST", url2, true);
 	xhr2.setRequestHeader("Content-Type", "application/json");
 	xhr2.send(myJSON2);
-
-
 };
 const form = document.getElementsByClassName('regform')[0];
 form.addEventListener('submit', handleFormSubmit);
