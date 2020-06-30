@@ -26,7 +26,7 @@ const handleFormSubmit = event => {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && xhr.status === 200) {
 			var json1 = JSON.parse(xhr.responseText);
-			window.alert(data.vorname + " " +  data.nachname + ", Sie haben sich " +json1.email + json1.password);
+			window.alert(data.vorname + " " +  data.nachname + ", Sie haben sich erfolgreich registriert");
 			}
 		else if(xhr.readyState === 4 && xhr.status === 400) {
 			var json2 = JSON.parse(xhr.responseText);
