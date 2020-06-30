@@ -6,7 +6,7 @@ const isValidElement = element => {
     // Make sure the element has the required properties.
       if (isValidElement(element) ) {
 			if(element.name === "maxkm") {
-				data[element.name] = Number(element.value)
+				data[element.name] = element.value
 			}
 			else{
 				data[element.name] = element.value;
