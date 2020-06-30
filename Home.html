@@ -61,16 +61,19 @@
 	
 	
 
-
+	
 	<div id="main2">
 		<h1 id="headline">Find the perfect Boi</h1><br>
 
 		<div class="greybackground">
+
+			<form class="suchform">
+
 			<table id="auswahl" cellspacing="25" style = "text-align: center;">
 				<tr>
 					<th>
 						Marke <br>
-						<select id="find">
+						<select id="find" name="marke">
 							<option disabled selected>Marke auswählen</option>
 							<option>Mercedes-Benz </option>
 							<option>Audi</option>
@@ -85,7 +88,7 @@
 					</th>
 
 					<th>Erstzulassung <br>
-						<select id="find" >
+						<select id="find" name="erstzulassung" >
 							<option disabled selected>Erstzulassung auswählen</option>
 							<option> 1999-2002</option>
 							<option>2003-2005</option>
@@ -97,13 +100,13 @@
 				</tr>
 				<tr>
 					<th>max. Kilometer <br>
-						<input id="find" type="search" placeholder="maximale Kilometer">
+						<input id="find" type="search" name="maxkm" placeholder="maximale Kilometer">
 					</th>
 
 					<th>Region <br>
-						<select id="find">
+						<select id="find" name="region">
 							<option disabled selected>Region auswählen</option>
-							<option>Baden-Würtemberg</option>
+							<option>Baden-Württemberg</option>
 							<option>Bayern</option>
 							<option>Berlin</option>
 							<option>Brandenburg</option>
@@ -124,18 +127,19 @@
 					</th>
 
 					<th>Adresse<br>
-						<input id="find" type="search" placeholder="Adresse">
+						<input id="find" type="search" name="address" placeholder="Adresse">
 					</th>
 				</tr>
 				<tr>
 					<th>Preis (€) <br>
-						<input id="find" type="search" placeholder="Preis bis">
+						<input id="find" type="search" name="price" placeholder="Preis bis">
 					</th>
 
-					<th ><br><a id=search href="Kaufen.html">Suchen</a></th>
+					<th><br><button type="button submit" value="Suchen" class="btn btn-primary">Suchen</button></th>
+					
 
 					<th>Kraftstoffart<br>
-						<select id="find">
+						<select id="find" name="sprit">
 							<option disabled selected>Kraftstoffart auswählen</option>
 							<option>Benzin</option>
 							<option>Diesel</option>
@@ -144,6 +148,9 @@
 					</th>
 				</tr>
 			</table>
+
+		</form>
+
 		</div>
 		
 	</div>
@@ -156,6 +163,8 @@
 		<br> <br>
 			&#169; 2020. | BOIHAUS AG Alle Rechte vorbehalten |<a id="agb" href="https://www.hs-albsig.de/"> Rechtliche Hinweise</a> |
 	</div>
+
+	<script src="boi_js/suche.js"></script>
 </body>
 
 </html>
