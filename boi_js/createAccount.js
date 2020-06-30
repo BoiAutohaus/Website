@@ -52,7 +52,7 @@ const handleAnSubmit = event => {
 			var json1 = JSON.parse(xhr2.responseText);
 			window.alert(data2.mail + ", Sie haben sich efolgreich angemeldet "+ json1.mail);
 			}
-		else if(xhr2.readyState === 4 && xhr2.status === 400) {
+		else if(xhr2.readyState === 4 && xhr2.status === 401) {
 			var json2 = JSON.parse(xhr2.responseText);
 			console.log("We got here kek");
 			window.alert("Error: Passwort oder Email falsch " /*  +  json2.antwort2*/ );
