@@ -50,7 +50,7 @@ const handleAnSubmit = event => {
 	xhr2.onreadystatechange = function () {
 		if (xhr2.readyState === 4 && xhr2.status === 200) {
 			var json1 = JSON.parse(xhr2.responseText);
-			window.alert(data2.mail + ", Sie haben sich efolgreich angemeldet "+ json1.mail  );
+			window.alert(data2.mail + ", Sie haben sich efolgreich angemeldet "+ json1.mail);
 			}
 		else if(xhr2.readyState === 4 && xhr2.status === 400) {
 			var json2 = JSON.parse(xhr2.responseText);
