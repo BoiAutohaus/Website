@@ -5,7 +5,12 @@ const isValidElement = element => {
   const formToJSON = elements => [].reduce.call(elements, (data, element) => {
     // Make sure the element has the required properties.
       if (isValidElement(element) ) {
-      data[element.name] = element.value;
+			if(element.name === "maxkm") {
+				data[element.name] = Number(element.value)
+			}
+			else{
+				data[element.name] = element.value;
+			}
     }
     return data;
   }, {});
