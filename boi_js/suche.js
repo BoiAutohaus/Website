@@ -32,7 +32,7 @@ const isValidElement = element => {
 		else if(xhr.readyState === 4 && xhr.status === 401) {
       var json2 = JSON.parse(xhr.responseText);
       
-			console.log("Bad request" + json2);
+			console.log("Bad request");
 			window.alert("Error: "  +  json2.nachricht);
 		}
 		
