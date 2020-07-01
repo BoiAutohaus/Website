@@ -18,20 +18,22 @@ const isValidElement = element => {
     var myJSON = JSON.stringify(data);
     console.log(myJSON);
     var xhr = new XMLHttpRequest();
+    
     var url = "http://localhost:8000/api/auto";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(myJSON)
-    xhr2.onreadystatechange = function () {
-		if (xhr2.readyState === 4 && xhr2.status === 200) {
-            var json1 = JSON.parse(xhr2.responseText);
+    xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && xhr.status === 200) {
+            var json1 = JSON.parse(xhr.responseText);
             console.log("Success request");
 			//window.alert(data2.mail + ", Sie haben sich efolgreich angemeldet "+ json1.mail);
 		}
-		else if(xhr2.readyState === 4 && xhr2.status === 401) {
-			var json2 = JSON.parse(xhr2.responseText);
-			console.log("Bad request");
-			//window.alert("Error: Passwort oder Email falsch " /*  +  json2.antwort2*/ );
+		else if(xhr.readyState === 4 && xhr.status === 401) {
+      var json2 = JSON.parse(xhr.responseText);
+      
+			console.log("Bad request" + json2);
+			window.alert("Error: "  +  json2.nachricht);
 		}
 		
 	}
