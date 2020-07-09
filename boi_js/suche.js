@@ -90,6 +90,8 @@ function renderCars(cars) {
   card.append(cardBody);
 
   const entriesContainer = $('#guestbookEntriesContainer');
+  const suchContainer = $('#main2');
+  suchContainer.empty();
   entriesContainer.empty();
   entriesContainer.append(card);
   
