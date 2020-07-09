@@ -79,7 +79,7 @@ function renderCars(cars) {
   const card = $('<div class="card"/>');
   const cardHeader = $('<div class="card-header" />');
   cardHeader.text("Eintrag #" + cars);
-  const deleteButton = $('<button data-id="' + cars.id + '" class="btn btn-sm btn-danger float-right delete-button">Löschen</button>');
+  //const deleteButton = $('<button data-id="' + cars.id + '" class="btn btn-sm btn-danger float-right delete-button">Löschen</button>');
   //cardHeader.append(deleteButton);
 
   card.append(cardHeader);
@@ -90,6 +90,7 @@ function renderCars(cars) {
   card.append(cardBody);
 
   const entriesContainer = $('#guestbookEntriesContainer');
+  entriesContainer.empty();
   entriesContainer.append(card);
   
 }
