@@ -78,7 +78,12 @@ function renderCars(cars) {
   cars = JSON.stringify(cars)
   const card = $('<div class="card"/>');
   const cardHeader = $('<div class="card-header" />');
-  cardHeader.text("Eintrag #" + cars);
+  //cardHeader.text("Eintrag #" + cars);
+  cardHeader.text(cars.modell+":<br><br>");
+  cardHeader.text("KraftstoffVerbrauch<br><br>");
+  cardHeader.text("Co2 Emissionen<br>");
+  cardHeader.text(cars.sprit+"<br>");
+  cardHeader.text("Baujahr<br><br><br>");
   //const deleteButton = $('<button data-id="' + cars.id + '" class="btn btn-sm btn-danger float-right delete-button">Löschen</button>');
   //cardHeader.append(deleteButton);
 
@@ -86,7 +91,7 @@ function renderCars(cars) {
 
   const cardBody = $('<div class="card-body" />');
   // This allows HTML Injection! Demo purpose only! Better use .text()!
-  cardBody.html(cars.text);
+  //cardBody.html(cars.text);
   card.append(cardBody);
 
   const entriesContainer = $('#guestbookEntriesContainer');
