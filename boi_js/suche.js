@@ -27,6 +27,7 @@ const isValidElement = element => {
 		if (xhr.readyState === 4 && xhr.status === 200) {
             var json1 = JSON.parse(xhr.responseText);
             console.log("Success request");
+            renderCars(json1)
 			//window.alert(data2.mail + ", Sie haben sich efolgreich angemeldet "+ json1.mail);
 		}
 		else if(xhr.readyState === 4 && xhr.status === 401) {
@@ -55,6 +56,7 @@ const isValidElement = element => {
             var json1 = JSON.parse(xhr.responseText);
             console.log("Success request");
       //window.alert(data2.mail + ", Sie haben sich efolgreich angemeldet "+ json1.mail);
+      renderCars(json1)
     }
     else if(xhr2.readyState === 4 && xhr2.status === 401) {
       var json2 = JSON.parse(xhr2.responseText);
@@ -70,4 +72,25 @@ form.addEventListener('submit', handleFormSubmitII);
 const form_searchbar = document.getElementsByClassName('form-inline')[0];
 console.log(form_searchbar);
 form_searchbar.addEventListener('submit', handleFormSubmitIII);
+
+
+function renderCars(cars) {
+  cars = JSON.stringify(cars)
+  const card = $('<div class="card"/>');
+  const cardHeader = $('<div class="card-header" />');
+  cardHeader.text("Eintrag #" + cars);
+  const deleteButton = $('<button data-id="' + cars.id + '" class="btn btn-sm btn-danger float-right delete-button">Löschen</button>');
+  //cardHeader.append(deleteButton);
+
+  card.append(cardHeader);
+
+  const cardBody = $('<div class="card-body" />');
+  // This allows HTML Injection! Demo purpose only! Better use .text()!
+  cardBody.html(cars.text);
+  card.append(cardBody);
+
+  const entriesContainer = $('#guestbookEntriesContainer');
+  entriesContainer.append(card)
+  
+}
 
