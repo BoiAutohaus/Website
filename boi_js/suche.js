@@ -27,7 +27,7 @@ const isValidElement = element => {
 		if (xhr.readyState === 4 && xhr.status === 200) {
             var json1 = JSON.parse(xhr.responseText);
             console.log("Success request");
-            renderCars(json1)
+            renderCars(json1);
 			//window.alert(data2.mail + ", Sie haben sich efolgreich angemeldet "+ json1.mail);
 		}
 		else if(xhr.readyState === 4 && xhr.status === 401) {
@@ -56,7 +56,7 @@ const isValidElement = element => {
             var json1 = JSON.parse(xhr.responseText);
             console.log("Success request");
       //window.alert(data2.mail + ", Sie haben sich efolgreich angemeldet "+ json1.mail);
-      renderCars(json1)
+      renderCars(json1);
     }
     else if(xhr2.readyState === 4 && xhr2.status === 401) {
       var json2 = JSON.parse(xhr2.responseText);
@@ -90,7 +90,7 @@ function renderCars(cars) {
   card.append(cardBody);
 
   const entriesContainer = $('#guestbookEntriesContainer');
-  entriesContainer.append(card)
+  entriesContainer.append(card);
   
 }
 
