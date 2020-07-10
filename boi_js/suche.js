@@ -51,7 +51,7 @@ function renderCars(cars) {
 				// Create Picture
 				const cardBild = document.createElement("img");
 				cardBild.src = "boi_bilder/" + cars[i].Bild;
-				cardBild.width = "500px";
+				cardBild.width = "500";
 				cardBild.alt = "AutoBild";
 				
 				// Create 2nd Column
@@ -112,6 +112,7 @@ function renderCars(cars) {
 				*/
         
 			}
+			// Append Created Table to Guestbookentry
 			entriesContainer.append(cardTable); 
 		}
 	}else{
