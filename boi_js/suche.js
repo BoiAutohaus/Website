@@ -11,8 +11,13 @@ function renderCars(cars) {
 	suchContainer.empty();
 	
 	// Empty Guestbook Thingy
-	const entriesContainer = $('#guestbookEntriesContainer');
-	entriesContainer.empty();
+	var entriesContainer2 = $("#guestbookEntriesContainer");
+	entriesContainer2.empty();
+	var entriesContainer = document.createElement("div");
+	entriesContainer.id = "guestbookEntriesContainer";
+	entriesContainer.className = "greybackground";
+	
+	//entriesContainer = entriesContainer2;
 	
 	// check for amount of Result Objects
 	if(cars.Modell == undefined){
@@ -88,7 +93,7 @@ function renderCars(cars) {
 				
 				// Create Link to Buypage
 				const cardA = document.createElement("a");
-				cardA.href = "ZumDeal_BMWM340i.html";
+				cardA.href = "ZumDeal_"+cars[i].Marke + cars[i].Modell + ".html";
 				
 				// Append Button To Link
 				cardA.appendChild(cardButton);
@@ -187,6 +192,7 @@ function renderCars(cars) {
 		entriesContainer.append(card);
 		*/
 	}
+	document.body.append(entriesContainer);
 };
 // Function for Checking if Element is Valid
 const isValidElement = element => {  
