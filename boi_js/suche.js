@@ -78,8 +78,30 @@ function renderCars(cars) {
   cars = JSON.stringify(cars)
   const card = $('<div class="card"/>');
   const cardHeader = $('<div class="card-header" />');
+  const entriesContainer = $('#guestbookEntriesContainer');
+  const suchContainer = $('#main2');
+  suchContainer.empty();
+  entriesContainer.empty();
   //cardHeader.text("Eintrag #" + cars);
-  cardHeader.text(cars.modell+":<br><br>"+"Co2 Emissionen<br>"+"KraftstoffVerbrauch<br><br>"+cars.sprit+"<br>"+"Baujahr<br><br><br>");
+  if(cars.modell == undefined){
+	  if(cars.0.modell == undefined){
+			cardHeader.text("No Results Found");
+			card.append(cardHeader);
+			entriesContainer.append(card);
+		}else{
+			var i;
+			for(i=0;i<cars.length;i++){
+				cardHeader.text(cars.i.modell)
+				card.append(cardHeader);
+				entriesContainer.append(card);
+		  }
+	  }
+  }else{
+		cardHeader.text(cars.modell+":<br><br>"+"Co2 Emissionen<br>"+"KraftstoffVerbrauch<br><br>"+cars.sprit+"<br>"+"Baujahr<br><br><br>"); 
+		card.append(cardHeader);
+		entriesContainer.append(card);
+  }
+  
   //cardHeader.text("KraftstoffVerbrauch<br><br>");
   //cardHeader.text("Co2 Emissionen<br>");
   //cardHeader.text(cars.sprit+"<br>");
@@ -94,11 +116,10 @@ function renderCars(cars) {
   //cardBody.html(cars.text);
   card.append(cardBody);
 
-  const entriesContainer = $('#guestbookEntriesContainer');
-  const suchContainer = $('#main2');
-  suchContainer.empty();
-  entriesContainer.empty();
-  entriesContainer.append(card);
+ 
+  
+  
+  
   
 }
 
