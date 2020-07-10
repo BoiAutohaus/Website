@@ -61,13 +61,13 @@ function renderCars(cars) {
 
 				// Create Paragraph with Text
 				const cardP = document.createElement("p");
-				//cardP.text(cars[i].Marke + cars[i].Modell);
-				//cardP.appendChild(cardh2);
+				cardP.innerHTML = "Hier Kommt der Text über das Auto hin";
 				
-				// Create Headline in Paragraph
+				// Create Headline (Preistag) 
 				const cardh2 = document.createElement("h2");
-				cardh2.style = "color:red; text-align:center;";
-				cardh2.innerHTML = "Preis: " + cars[i].Preis;
+				cardh2.style.color = "red";
+				cardh2.style.float = "center";
+				cardh2.innerHTML = "Preis: " + cars[i].Preis+"€";
 				
 				// Create Button for Link
 				const cardButton = document.createElement("button");
@@ -85,13 +85,14 @@ function renderCars(cars) {
 				
 				// Append Button To Link
 				cardA.appendChild(cardButton);
-				// Append Link and Headline to Paragraph
-				cardP.appendChild(cardh2);
-				cardP.appendChild(cardA);
+				// Append Link to Column 2
+				cardTD2.appendChild(cardA);
 				// Append Paragraph to Column 2
 				cardTD2.appendChild(cardP);
 				// Append Image to Column 1
 				cardTD.appendChild(cardBild);
+				// Append Headline (Preis) to Column 2
+				cardTD2.appendChild(cardh2);
 				// Append Column 1 & 2 to TableRow
 				cardTableRow.appendChild(cardTD);
 				cardTableRow.appendChild(cardTD2);
@@ -116,7 +117,7 @@ function renderCars(cars) {
 				*/
 				// DEBUG -----------------------
 				console.log("Debug 2 ");
-				console.log(cardButton);
+				console.log(cardP);
 				console.log("End Debug 2");
 				// -----------------------------
 			}
