@@ -1,49 +1,52 @@
 
 function renderCars(cars) {
-  //cars = JSON.stringify(cars);
-  //cars = JSON.parse(cars);
-  cars = cars.daten; // Removing Shell
-  console.log(cars);
-  const card = $('<div class="card"/>');
-  const cardHeader = $('<div class="card-header" />');
-  const entriesContainer = $('#guestbookEntriesContainer');
-  const suchContainer = $('#main2');
-  const cardBody = $('<div class="card-body" />');
+	// Remove Shell from cars (extract the data)
+	cars = cars.daten; 
 
-
+	const card = $('<div class="card"/>');
+	const cardHeader = $('<div class="card-header" />');
+	const cardBody = $('<div class="card-body" />');
+	
+	// Empty Search Box Container
+	const suchContainer = $('#main2');
 	suchContainer.empty();
+	
+	// Empty Guestbook Thingy
+	const entriesContainer = $('#guestbookEntriesContainer');
 	entriesContainer.empty();
+	
+	// check for amount of Result Objects
 	if(cars.Modell == undefined){
 		if(Object.keys(cars).length === 0){
+			// 0 Results
 			cardHeader.text("No Results Found");
 			card.append(cardHeader);
 			entriesContainer.append(card);
 			console.log("Found 0 Entry");
 		}else{
-			//const cardTable = $('<table class="table" width="90% />');
+			// 2+ Results
+			// Create Table for Results
 			const cardTable = document.createElement("table");
 			cardTable.class = "table table-responsive greybackground";
 			cardTable.width = "90%";
+			
+			// for every Result: 
 			var i;
 			for(i=0;i<Object.keys(cars).length;i++){
 				// DEBUG ---------------------
+				/*
 				console.log("Found x Entries");
 				console.log("Debug, Entry: "+ i);
 				console.log(cars[i]);
 				console.log(cars[i].Modell);
 				console.log("Debug Ende");
+				*/
 				//----------------------------
-				//const cardDiv = $('<div class="table-responsive greybackground" style="width: 80%;" />');
-				/*const cardDiv = document.createElement("div");
-				cardDiv.class = "table-responsive greybackground";
-				cardDiv.style = "width: 80%";
-					*/
 				
-
+	
 				// Create Table Row
 				const cardTableRow = document.createElement("tr");
-
-
+				
 				// Create Table Column
 				const cardTD = document.createElement("td");
 				cardTD.width = "35%";  
@@ -101,46 +104,34 @@ function renderCars(cars) {
 				// Append TableRow to Table
 				cardTable.append(cardTableRow);
 				
-				/*
-				card.appendChild(cardHeader);
-				cardA.appendChild(cardButton.text("Zum Deal"));
-				cardh2.appendChild(cardA);        
-				cardh2.text("Preis: " + cars[i].Preis);
-				cardP.text(cars[i].Marke + cars[i].Modell);
-				cardTD2.appendChild(cardP);
-				cardTD.appendChild(cardBild);
-				cardTD.appendChild(cardTD2);        
-				cardTableRow.appendChild(cardTD);
-				cardTable.appendChild(cardTableRow);         
-				cardDiv.appendChild(cardTable);        
-				cardBody.appendChild(cardDiv);        
-				card.appendChild(cardBody);        
-				entriesContainer.append(card);             
-				*/
+				
 				// DEBUG -----------------------
+				/*
 				console.log("Debug 2 ");
 				console.log(cardP);
 				console.log("End Debug 2");
+				*/
 				// -----------------------------
 			}
 			// Append Created Table to Guestbookentry
 			entriesContainer.append(cardTable); 
 		}
 	}else{
+		// 1 Entry
 		cardHeader.text(cars.modell+":<br><br>"+"Co2 Emissionen<br>"+"KraftstoffVerbrauch<br><br>"+cars.sprit+"<br>"+"Baujahr<br><br><br>"); 
 		card.append(cardHeader);
 		entriesContainer.append(card);
-		console.log("Found 1 Entries");
 	}
 };
 
 
 
-
+// Function for Checking if Element is Valid
 const isValidElement = element => {  
 	return element.name && element.value;
 };
-  
+ 
+// Function to turn a form into a JSON Object
 const formToJSON = elements => [].reduce.call(elements, (data, element) => {
     // Make sure the element has the required properties.
 	if (isValidElement(element) ) {
@@ -149,6 +140,7 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
     return data;
 }, {});
 
+// Handle suchform
 const handleFormSubmitII = event => {
 	event.preventDefault();
     const data = formToJSON(form.elements);
@@ -174,7 +166,7 @@ const handleFormSubmitII = event => {
 	}
 };
   
-
+// Handle suchbar
 const handleFormSubmitIII = event => {    
 	event.preventDefault();
     const data = formToJSON(form_searchbar.elements);
@@ -201,8 +193,11 @@ const handleFormSubmitIII = event => {
 	}
 };
 
+// suchform
 const form = document.getElementsByClassName('suchform')[0];
 form.addEventListener('submit', handleFormSubmitII);
+
+// suchbar
 const form_searchbar = document.getElementsByClassName('form-inline')[0];
 form_searchbar.addEventListener('submit', handleFormSubmitIII);
 
