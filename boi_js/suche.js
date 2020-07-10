@@ -21,7 +21,12 @@ function renderCars(cars) {
 			entriesContainer.append(card);
 			console.log("Found 0 Entry");
 		}else{
-			var i;
+      
+      //const cardTable = $('<table class="table" width="90% />');
+      const cardTable = document.createElement("table");
+      cardTable.class = "table";
+      cardTable.width = "90%";
+      var i;
 			for(i=0;i<Object.keys(cars).length;i++){
 				/*cardHeader.text(cars[i].Modell)
 				console.log(cars[i].Modell);
@@ -29,41 +34,71 @@ function renderCars(cars) {
 				entriesContainer.append(card);
         console.log("Entry "+i)*/
         
-        const cardDiv = $('<div class="table-responsive greybackground" style="width: 80%;" />');
-        //const cardTable = $('<table class="table" width="90% />');
-        const cardTable = document.createElement("table");
-        cardTable.class = "table";
-        cardTable.width = "90%";
+        //const cardDiv = $('<div class="table-responsive greybackground" style="width: 80%;" />');
+        const cardDiv = document.createElement("div");
+        cardDiv.class = "table-responsive greybackground";
+        cardDiv.style = "width: 80%";
+
+        
+        //cardTable.appendChild(cardTableRow);
         //const cardTableRow = $('<tr/>');
         const cardTableRow = document.createElement("tr");
+        //cardTableRow.appendChild(cardTD);
 
-        const cardTD = $('<td width="35%"/>');
-        
+        //const cardTD = $('<td width="35%"/>');
+        const cardTD = document.createElement("td");
+        cardTD.width = "35%";  
+        /*cardTD.appendChild(cardBild);
+        cardTD.appendChild(cardTD);  */ 
 
-        const cardBild = $('<img src=boi_bilder/'+ cars[i].Bild +' width="500px" alt="AutoBild" />');
+        //const cardBild = $('<img src=boi_bilder/'+ cars[i].Bild +' width="500px" alt="AutoBild" />');
+        const cardBild = document.createElement("img");
+        cardBild.src = "boi_bilder/" + cars[i].Bild;
+        cardBild.width = "500px";
+        cardBild.alt = "AutoBild";
         
-        //const cardTD = document.createElement("td");
-        //cardTD.width("35%")
+        
+        //const cardTD2 = $('<td id="greyinbox" width="55%" />');
+        const cardTD2 = document.createElement("td");
+        cardTD2.id = "greyinbox";
+        cardTD2.width = "35%";
+        //cardTD2.appendChild(cardP);
 
-        const cardTD2 = $('<td id="greyinbox" width="55%" />');
-        const cardP = $('<p> </p>');
-        const cardh2 = $('<h2  style="color:red; text-align:center;" />');
-        const cardA = $('<a href="ZumDeal_MBAK.html" />');
-        const cardButton = $('<button type="button"/> ');
         
-        card.append(cardHeader);
-        cardA.append(cardButton.text("Zum Deal"));
-        cardh2.append(cardA);        
+        //const cardP = $('<p> </p>');
+        const cardP = document.createElement("p");
+        //cardP.text(cars[i].Marke + cars[i].Modell);
+        //cardP.appendChild(cardh2);
+        
+        //const cardh2 = $('<h2  style="color:red; text-align:center;" />');
+        const cardh2 = document.createElement("h2");
+        cardh2.style = "color:red; text-align:center;";
+        /*cardh2.appendChild(cardA); 
+        cardh2.text("Preis: " + cars[i].Preis);*/
+        
+        //const cardA = $('<a href="ZumDeal_MBAK.html" />');
+        const cardA = document.createElement("a");
+        cardA.href = "ZumDeal_MBAK.html";
+        //cardA.appendChild(cardButton);
+
+        //const cardButton = $('<button type="button"/> ');
+        const cardButton = document.createElement("button");
+        cardButton.type = "button";
+        //cardButton.text("Zum Deal");
+        
+        card.appendChild(cardHeader);
+        cardA.appendChild(cardButton.text("Zum Deal"));
+        cardh2.appendChild(cardA);        
         cardh2.text("Preis: " + cars[i].Preis);
         cardP.text(cars[i].Marke + cars[i].Modell);
-        cardTD2.append(cardP);
-        cardTD.append(cardBild);
-        cardTD.append(cardTD2);        
-        cardTableRow.append(cardTD);
-        cardTable.append(cardTableRow);         
-        cardDiv.append(cardTable);        
-        cardBody.append(cardDiv);        
-        card.append(cardBody);        
+        cardTD2.appendChild(cardP);
+        cardTD.appendChild(cardBild);
+        cardTD.appendChild(cardTD2);        
+        cardTableRow.appendChild(cardTD);
+        cardTable.appendChild(cardTableRow);         
+        cardDiv.appendChild(cardTable);        
+        cardBody.appendChild(cardDiv);        
+        card.appendChild(cardBody);        
         entriesContainer.append(card);             
 
         
