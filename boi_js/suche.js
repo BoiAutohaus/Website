@@ -29,7 +29,8 @@ function renderCars(cars) {
 			console.log("Found x Entries");
 			console.log(cars[0]);
 	  }
-  }else{
+  }
+  else{
 		cardHeader.text(cars.modell+":<br><br>"+"Co2 Emissionen<br>"+"KraftstoffVerbrauch<br><br>"+cars.sprit+"<br>"+"Baujahr<br><br><br>"); 
 		card.append(cardHeader);
 		entriesContainer.append(card);
