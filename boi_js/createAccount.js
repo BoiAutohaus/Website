@@ -1,5 +1,3 @@
-const { json } = require("body-parser");
-
 const isValidElement = element => {
   return element.name && element.value;
 };
