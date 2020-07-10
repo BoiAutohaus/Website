@@ -1,15 +1,4 @@
-const isValidElement = element => {
-    return element.name && element.value;
-  };
-  
-  const formToJSON = elements => [].reduce.call(elements, (data, element) => {
-    // Make sure the element has the required properties.
-      if (isValidElement(element) ) {
-      data[element.name] = element.value;
-    }
-    return data;
-  }, {});
-  
+
   
   const handleFormSubmit3 = event => {
       
@@ -19,13 +8,15 @@ const isValidElement = element => {
       var myJSON = JSON.stringify(data);      
       console.log(myJSON);
 	  */
-	  
-	  var car1 = '{"id": '+$(#carid).name+'}'; 
+    var car1 = document.getElementById('carid');
+    var output = car1.getAttribute("name");
+    console.log(output);
+	  var car2 = '{"id":' + output + '}'; 
       var xhr = new XMLHttpRequest();
       var url = "http://localhost:8000/api/buy";
       xhr.open("POST", url, true);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.send(car1)
+      xhr.setRequestHeader("Content-Type", "application/json", "Access-Control-Allow-Origin");
+      xhr.send(car2);
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
           var json1 = JSON.parse(xhr.responseText);
@@ -46,6 +37,6 @@ const isValidElement = element => {
   
   
   const form = document.getElementsByClassName('kaufen')[0];
-  form.addEventListener('submit', handleFormSubmit);
+  form.addEventListener('submit', handleFormSubmit3);
   
   
