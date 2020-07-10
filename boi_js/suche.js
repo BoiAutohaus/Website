@@ -140,6 +140,7 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
     return data;
 }, {});
 
+// Handle suchform
 const handleFormSubmitII = event => {
 	event.preventDefault();
     const data = formToJSON(form.elements);
@@ -165,7 +166,7 @@ const handleFormSubmitII = event => {
 	}
 };
   
-
+// Handle suchbar
 const handleFormSubmitIII = event => {    
 	event.preventDefault();
     const data = formToJSON(form_searchbar.elements);
