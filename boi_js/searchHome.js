@@ -14,7 +14,7 @@ const formToJSON1 = elements => [].reduce.call(elements, (data, element) => {
 function renderCars(cars) {
 	// Remove Shell from cars (extract the data)
 	cars = cars.daten; 
-
+	//console.log(cars);
 	const card = $('<div class="card"/>');
 	const cardHeader = $('<div class="card-header" />');
 	const cardBody = $('<div class="card-body" />');
