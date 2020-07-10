@@ -34,7 +34,7 @@ function renderCars(cars) {
         const cardTableRow = $('<tr/>');
         const cardTD = $('<td width="35%"><img src=boi_bilder/'+ cars[i].Bild +' width="500px" alt="AutoBild" />');
         const cardTD2 = $('<td id="greyinbox" width="55%" />');
-        const cardP = $('<p />');
+        const cardP = $('<p> </p>');
         const cardh2 = $('<h2  style="color:red; text-align:center;" />');
         const cardA = $('<a href="ZumDeal_MBAK.html" />');
         const cardButton = $('<button type="button"/> ');
@@ -66,7 +66,7 @@ function renderCars(cars) {
 			console.log("Found x Entries");
 			console.log(cars[0]);
 	  }
-  }
+  
   else{
 		cardHeader.text(cars.modell+":<br><br>"+"Co2 Emissionen<br>"+"KraftstoffVerbrauch<br><br>"+cars.sprit+"<br>"+"Baujahr<br><br><br>"); 
 		card.append(cardHeader);
