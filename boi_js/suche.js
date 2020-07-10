@@ -75,7 +75,8 @@ form_searchbar.addEventListener('submit', handleFormSubmitIII);
 
 
 function renderCars(cars) {
-  cars = JSON.stringify(cars)
+  cars = JSON.stringify(cars);
+  cars = JSON.parse(cars);
   const card = $('<div class="card"/>');
   const cardHeader = $('<div class="card-header" />');
   const entriesContainer = $('#guestbookEntriesContainer');
