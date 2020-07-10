@@ -27,7 +27,12 @@ const handleFormSubmit = event => {
 		if (xhr.readyState === 4 && xhr.status === 200) {
 			var json1 = JSON.parse(xhr.responseText);
 			window.alert(data.vorname + " " +  data.nachname + ", Sie haben sich erfolgreich registriert");
-			}
+			console.log(myJSON);
+			localStorage.setItem("Vorname", data.vorname);
+			localStorage.setItem("Nachname", data.nachname);
+			//localStorage.setItem("Adresse",)
+
+		}
 		else if(xhr.readyState === 4 && xhr.status === 400) {
 			var json2 = JSON.parse(xhr.responseText);
 			console.log("We got here kek");
