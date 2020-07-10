@@ -77,11 +77,8 @@
 					
 				</tr>
 				<tr>
-					<th>Ihr Modell:<br><br>
-					
-					</th>
 
-					<th>$Markenname<br><br>
+					<th id="name"><br><br>
 						
 					</th>
 
@@ -124,6 +121,11 @@
 		|</div>
 	</div>
 	<script src="boi_js/suche.js"></script>
+	<script>
+		var name = document.getElementById("name");
+		name = localStorage.getItem("vorname") + " " + localStorage.getItem("nachname");
+		name.innerHTML(name);
+	</script>
 </body>
 
 </html>
