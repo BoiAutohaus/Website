@@ -27,7 +27,6 @@ function renderCars(cars) {
 				console.log(cars[i].Modell);
 				card.append(cardHeader);
 				entriesContainer.append(card);
-<<<<<<< HEAD
         console.log("Entry "+i)*/
         
         const cardDiv = $('<div class="table-responsive greybackground" style="width: 80%;" />');
@@ -62,10 +61,8 @@ function renderCars(cars) {
 
         
 		  }
-=======
 				console.log("Entry: "+i);
 			}
->>>>>>> 723873e68cace788ed74ff4666b5cfed1d4d9fa9
 			console.log("Found x Entries");
 			console.log(cars[0]);
 	  }
@@ -88,8 +85,7 @@ function renderCars(cars) {
 
   //const cardBody = $('<div class="card-body" />');
   // This allows HTML Injection! Demo purpose only! Better use .text()!
-  //cardBody.html(cars.text);
-  
+  //cardBody.html(cars.text)  
 
 };
 
