@@ -85,7 +85,7 @@ function renderCars(cars) {
   entriesContainer.empty();
   //cardHeader.text("Eintrag #" + cars);
   if(cars.modell == undefined){
-	  if(cars.'0'.modell == undefined){
+	  if(cars['0'].modell == undefined){
 			cardHeader.text("No Results Found");
 			card.append(cardHeader);
 			entriesContainer.append(card);
