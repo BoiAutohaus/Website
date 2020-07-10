@@ -40,7 +40,7 @@ const isValidElement = element => {
       };
   
   
-  const form = document.getElementsByClassName('kauf')[0];
+  const form = document.getElementsByClassName('kaufen')[0];
   form.addEventListener('submit', handleFormSubmit);
   
   
