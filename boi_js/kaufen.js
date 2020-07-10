@@ -22,7 +22,7 @@
           var json1 = JSON.parse(xhr.responseText);
           window.alert(data.vorname + " " +  data.nachname + ", Kaufauftrag wurde übermittelt");
           console.log(json1);
-		  window.location.assign("Kaufbestatigung.html");
+		  window.location.href = "Kaufbestatigung.html";
           localStorage.setItem("Vorname", data.vorname);
           localStorage.setItem("Nachname", data.nachname);          
     
