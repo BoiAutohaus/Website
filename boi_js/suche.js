@@ -73,6 +73,8 @@ function renderCars(cars) {
 				const cardButton = document.createElement("button");
 				cardButton.className = "btn btn-primary";
 				cardButton.type = "button";
+				cardButton.style.marginTop = "125px";
+				cardButton.style.marginLeft = "20px";
 				cardButton.style.float = "right";
 				cardButton.style.width = "100px";
 				cardButton.style.height = "50px";
