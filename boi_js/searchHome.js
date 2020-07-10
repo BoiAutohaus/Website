@@ -1,3 +1,16 @@
+const isValidElement1 = element => {  
+	return element.name && element.value;
+};
+ 
+// Function to turn a form into a JSON Object
+const formToJSON1 = elements => [].reduce.call(elements, (data, element) => {
+    // Make sure the element has the required properties.
+	if (isValidElement1(element) ) {
+		data[element.name] = element.value;
+    }
+    return data;
+}, {});
+
 function renderCars(cars) {
 	// Remove Shell from cars (extract the data)
 	cars = cars.daten; 
@@ -189,10 +202,11 @@ function renderCars(cars) {
 	}
 };
 // Function for Checking if Element is Valid
+/*
 const isValidElement = element => {  
 	return element.name && element.value;
 };
- 
+
 // Function to turn a form into a JSON Object
 const formToJSON = elements => [].reduce.call(elements, (data, element) => {
     // Make sure the element has the required properties.
@@ -201,12 +215,12 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
     }
     return data;
 }, {});
-
+ */
 
 // Handle suchform
 const handleFormSubmitII = event => {
 	event.preventDefault();
-    const data = formToJSON(form.elements);
+    const data = formToJSON1(form.elements);
     var myJSON = JSON.stringify(data);
     console.log(myJSON);
     var xhr = new XMLHttpRequest();

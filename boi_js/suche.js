@@ -11,13 +11,11 @@ function renderCars(cars) {
 	suchContainer.empty();
 	
 	// Empty Guestbook Thingy
-	var entriesContainer2 = $("#guestbookEntriesContainer");
-	entriesContainer2.empty();
-	var entriesContainer = document.createElement("div");
+	const entriesContainer = document.createElement("div");
 	entriesContainer.id = "guestbookEntriesContainer";
 	entriesContainer.className = "greybackground";
-	
-	//entriesContainer = entriesContainer2;
+	entriesContainer.innerHTML = "";
+
 	
 	// check for amount of Result Objects
 	if(cars.Modell == undefined){
