@@ -8,6 +8,9 @@ function renderCars(cars) {
   const cardHeader = $('<div class="card-header" />');
   const entriesContainer = $('#guestbookEntriesContainer');
   const suchContainer = $('#main2');
+  const cardBody = $('<div class="card-body" />');
+
+
   suchContainer.empty();
   entriesContainer.empty();
   //cardHeader.text("Eintrag #" + cars);
@@ -20,11 +23,43 @@ function renderCars(cars) {
 		}else{
 			var i;
 			for(i=0;i<Object.keys(cars).length;i++){
-				cardHeader.text(cars[i].Modell)
+				/*cardHeader.text(cars[i].Modell)
 				console.log(cars[i].Modell);
 				card.append(cardHeader);
 				entriesContainer.append(card);
-				console.log("Entry "+i);
+        console.log("Entry "+i)*/
+        
+        const cardDiv = $('<div class="table-responsive greybackground" style="width: 80%;" />');
+        const cardTable = $('<table class="table" width="90% />');
+        const cardTableRow = $('<tr/>');
+        const cardTD = $('<td width="35%"><img src=boi_bilder/'+ cars[i].Bild +' width="500px" alt="AutoBild" />');
+        const cardTD2 = $('<td id="greyinbox" width="55%" />');
+        const cardP = $('<p />');
+        const cardh2 = $('<h2  style="color:red; text-align:center;" />');
+        const cardA = $('<a href="ZumDeal_MBAK.html" />');
+        const cardButton = $('<button type="button"/> ');
+        
+        card.append(cardHeader);
+        cardA.append(cardButton.text("Zum Deal"));
+        cardh2.append(cardA);
+        console.log(cardh2)
+        cardh2.text("Preis: " + cars[i].Preis);
+        cardP.text(cars[i].Marke + cars[i].Modell);
+        cardTD2.append(cardP);
+        cardTD.append(cardTD2);
+        console.log(cardTD);
+        cardTableRow.append(cardTD);
+        cardTable.append(cardTableRow);
+        console.log("Ich bin hier" + cardTable); 
+        cardDiv.append(cardTable);
+        console.log(cardDiv);
+        cardBody.append(cardDiv);
+        console.log(cardBody); 
+        card.append(cardBody);        
+        entriesContainer.append(card);
+                 
+
+        
 		  }
 			console.log("Found x Entries");
 			console.log(cars[0]);
@@ -46,10 +81,10 @@ function renderCars(cars) {
 
   card.append(cardHeader);
 
-  const cardBody = $('<div class="card-body" />');
+  //const cardBody = $('<div class="card-body" />');
   // This allows HTML Injection! Demo purpose only! Better use .text()!
   //cardBody.html(cars.text);
-  card.append(cardBody);
+  
 
 };
 
