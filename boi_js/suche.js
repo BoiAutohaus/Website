@@ -55,8 +55,8 @@ const isValidElement = element => {
     if (xhr2.readyState === 4 && xhr2.status === 200) {
             var json1 = JSON.parse(xhr.responseText);
             console.log("Success request");
-      //window.alert(data2.mail + ", Sie haben sich efolgreich angemeldet "+ json1.mail);
-      renderCars(json1);
+			console.log(json1);
+			renderCars(json1);
     }
     else if(xhr2.readyState === 4 && xhr2.status === 401) {
       var json2 = JSON.parse(xhr2.responseText);
@@ -76,7 +76,7 @@ form_searchbar.addEventListener('submit', handleFormSubmitIII);
 
 function renderCars(cars) {
   //cars = JSON.stringify(cars);
-  cars = JSON.parse(cars);
+  //cars = JSON.parse(cars);
   const card = $('<div class="card"/>');
   const cardHeader = $('<div class="card-header" />');
   const entriesContainer = $('#guestbookEntriesContainer');
