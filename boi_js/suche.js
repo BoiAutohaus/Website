@@ -132,7 +132,7 @@ function renderCars(cars) {
 		// Create Picture
 		const cardBild = document.createElement("img");
 		cardBild.src = "boi_bilder/" + cars.Bild;
-		cardBild.style ="width=500px";
+		cardBild.style.width ="500px";
 		cardBild.alt = "AutoBild";
 		
 		// Create 2nd Column
