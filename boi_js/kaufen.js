@@ -27,8 +27,7 @@ const isValidElement = element => {
           window.alert(data.vorname + " " +  data.nachname + ", Kaufauftrag wurde übermittelt");
           console.log(myJSON);
           localStorage.setItem("Vorname", data.vorname);
-          localStorage.setItem("Nachname", data.nachname);
-          
+          localStorage.setItem("Nachname", data.nachname);          
     
         }
         else if(xhr.readyState === 4 && xhr.status === 400) {
