@@ -52,7 +52,7 @@ function renderCars(cars) {
 				
 				// Create Table Column
 				const cardTD = document.createElement("td");
-				cardTD.width = "35%";  
+				cardTD.style.width = "35%";  
 
 				// Create Picture
 				const cardBild = document.createElement("img");
@@ -63,7 +63,7 @@ function renderCars(cars) {
 				// Create 2nd Column
 				const cardTD2 = document.createElement("td");
 				cardTD2.id = "greyinbox";
-				cardTD2.width = "35%";
+				cardTD2.style.width = "35%";
 
 				// Create Paragraph with Text
 				const cardP = document.createElement("p");
@@ -121,9 +121,72 @@ function renderCars(cars) {
 		}
 	}else{
 		// 1 Entry
-		cardHeader.text(cars.modell+":<br><br>"+"Co2 Emissionen<br>"+"KraftstoffVerbrauch<br><br>"+cars.sprit+"<br>"+"Baujahr<br><br><br>"); 
+		// Same as 2 but without Form
+		// Create Table Row
+		const cardTableRow = document.createElement("tr");
+		
+		// Create Table Column
+		const cardTD = document.createElement("td");
+		cardTD.style.width = "35%";  
+
+		// Create Picture
+		const cardBild = document.createElement("img");
+		cardBild.src = "boi_bilder/" + cars.Bild;
+		cardBild.style ="width=500px";
+		cardBild.alt = "AutoBild";
+		
+		// Create 2nd Column
+		const cardTD2 = document.createElement("td");
+		cardTD2.id = "greyinbox";
+		cardTD2.style.width = "35%";
+
+		// Create Paragraph with Text
+		const cardP = document.createElement("p");
+		cardP.innerHTML = "Modell: "+cars.Marke +" " + cars.Modell +"<br>Erstzulassung: "+cars.Erstzulassung+"<br>Kilometer: "+cars.Kilometer+"<br>Kraftstoffart: "+cars.Kraftstoffart;
+		
+		// Create Headline (Preistag) 
+		const cardh2 = document.createElement("h2");
+		cardh2.style.color = "red";
+		cardh2.style.float = "right";
+		cardh2.innerHTML = "Preis: " + cars.Preis+"€";
+		
+		// Create Button for Link
+		const cardButton = document.createElement("button");
+		cardButton.className = "btn btn-primary";
+		cardButton.type = "button";
+		cardButton.style.marginTop = "125px";
+		cardButton.style.marginLeft = "20px";
+		cardButton.style.float = "right";
+		cardButton.style.width = "100px";
+		cardButton.style.height = "50px";
+		cardButton.style.color = "white";
+		cardButton.innerHTML = "Kaufen";
+		
+		// Create Link to Buypage
+		const cardA = document.createElement("a");
+		cardA.href = "ZumDeal_BMWM340i.html";
+		
+		// Append Button To Link
+		cardA.appendChild(cardButton);
+		// Append Link to Column 2
+		cardTD2.appendChild(cardA);
+		// Append Paragraph to Column 2
+		cardTD2.appendChild(cardP);
+		// Append Image to Column 1
+		cardTD.appendChild(cardBild);
+		// Append Headline (Preis) to Column 2
+		cardTD2.appendChild(cardh2);
+		// Append Column 1 & 2 to TableRow
+		cardTableRow.appendChild(cardTD);
+		cardTableRow.appendChild(cardTD2);
+		// Append TableRow to Table
+		cardTable.append(cardTableRow);
+		// Append Table to Guestbook
+		entriesContainer.append(cardTable);
+		/*
 		card.append(cardHeader);
 		entriesContainer.append(card);
+		*/
 	}
 };
 
