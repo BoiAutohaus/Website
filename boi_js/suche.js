@@ -228,6 +228,7 @@ const handleFormSubmitII = event => {
 		else if(xhr.readyState === 4 && xhr.status === 401) {
 			var json2 = JSON.parse(xhr.responseText);
 			console.log("Bad request");
+			window.alert(json2.nachricht);
 		}
 	}
 };
