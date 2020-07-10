@@ -61,7 +61,7 @@ function renderCars(cars) {
 
 				// Create Paragraph with Text
 				const cardP = document.createElement("p");
-				cardP.innerHTML = cars[i].Marke +" " + cars[i].Modell ;
+				cardP.innerHTML = "Modell: "+cars[i].Marke +" " + cars[i].Modell +"<br>Erstzulassung: "+cars[i].Erstzulassung+"<br>Kilometer: "+cars[i].Kilometer+"<br>Kraftstoffart: "+cars[i].Kraftstoffart;
 				
 				// Create Headline (Preistag) 
 				const cardh2 = document.createElement("h2");
