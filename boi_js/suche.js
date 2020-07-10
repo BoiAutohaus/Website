@@ -164,7 +164,7 @@ function renderCars(cars) {
 		
 		// Create Link to Buypage
 		const cardA = document.createElement("a");
-		cardA.href = "ZumDeal_BMWM340i.html";
+		cardA.href = "ZumDeal_" + cars[i].Marke + cars[i].Modell +".html";
 		
 		// Append Button To Link
 		cardA.appendChild(cardButton);
