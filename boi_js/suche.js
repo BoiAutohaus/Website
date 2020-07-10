@@ -75,7 +75,7 @@ form_searchbar.addEventListener('submit', handleFormSubmitIII);
 
 
 function renderCars(cars) {
-  cars = JSON.stringify(cars);
+  //cars = JSON.stringify(cars);
   cars = JSON.parse(cars);
   const card = $('<div class="card"/>');
   const cardHeader = $('<div class="card-header" />');
@@ -85,7 +85,7 @@ function renderCars(cars) {
   entriesContainer.empty();
   //cardHeader.text("Eintrag #" + cars);
   if(cars.modell == undefined){
-	  if(cars[0].modell == undefined){
+	  if(cars.0.modell == undefined){
 			cardHeader.text("No Results Found");
 			card.append(cardHeader);
 			entriesContainer.append(card);
