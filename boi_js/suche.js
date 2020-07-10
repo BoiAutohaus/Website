@@ -12,11 +12,11 @@ function renderCars(cars) {
   entriesContainer.empty();
   //cardHeader.text("Eintrag #" + cars);
   if(cars.Modell == undefined){
-	  if(cars['0'].Modell == undefined){
+	  if(Object.keys(cars).length === 0){
 			cardHeader.text("No Results Found");
 			card.append(cardHeader);
 			entriesContainer.append(card);
-			console.log("Found 1 Entry");
+			console.log("Found 0 Entry");
 		}else{
 			var i;
 			for(i=0;i<Object.keys(cars).length;i++){
@@ -24,8 +24,8 @@ function renderCars(cars) {
 				console.log(cars[i].Modell);
 				card.append(cardHeader);
 				entriesContainer.append(card);
-				console.log("Entry "+i);
-		  }
+				console.log("Entry: "+i);
+			}
 			console.log("Found x Entries");
 			console.log(cars[0]);
 	  }
@@ -33,7 +33,7 @@ function renderCars(cars) {
 		cardHeader.text(cars.modell+":<br><br>"+"Co2 Emissionen<br>"+"KraftstoffVerbrauch<br><br>"+cars.sprit+"<br>"+"Baujahr<br><br><br>"); 
 		card.append(cardHeader);
 		entriesContainer.append(card);
-		console.log("Found 0 Entries");
+		console.log("Found 1 Entries");
   }
   
   //cardHeader.text("KraftstoffVerbrauch<br><br>");
