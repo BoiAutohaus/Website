@@ -122,9 +122,14 @@
 	</div>
 	<script src="boi_js/suche.js"></script>
 	<script>
+		if (localStorage.getItem("vorname") == null){
+			window.alert("Bitte loggen Sie sich erst ein!");
+		}
+		else{
 		var name = document.getElementById("name");
 		name = localStorage.getItem("vorname") + " " + localStorage.getItem("nachname");
 		name.innerHTML(name);
+		}
 	</script>
 </body>
 
