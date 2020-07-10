@@ -51,7 +51,7 @@ function renderCars(cars) {
 				// Create Picture
 				const cardBild = document.createElement("img");
 				cardBild.src = "boi_bilder/" + cars[i].Bild;
-				cardBild.width = "500";
+				cardBild.style ="width=500px";
 				cardBild.alt = "AutoBild";
 				
 				// Create 2nd Column
@@ -67,13 +67,17 @@ function renderCars(cars) {
 				// Create Headline in Paragraph
 				const cardh2 = document.createElement("h2");
 				cardh2.style = "color:red; text-align:center;";
-				//cardh2.innerHTML("Preis: " + cars[i].Preis);
+				cardh2.innerHTML = "Preis: " + cars[i].Preis;
 				
 				// Create Button for Link
 				const cardButton = document.createElement("button");
-				cardButton.type = "button submit";
-				cardButton.class = "btn-primary";
-				//cardButton.text("Zum Deal");
+				cardButton.className = "btn btn-primary";
+				cardButton.type = "button";
+				cardButton.style.float = "right";
+				cardButton.style.width = "100px";
+				cardButton.style.height = "50px";
+				cardButton.style.color = "white";
+				cardButton.innerHTML = "Kaufen";
 				
 				// Create Link to Buypage
 				const cardA = document.createElement("a");
@@ -110,7 +114,11 @@ function renderCars(cars) {
 				card.appendChild(cardBody);        
 				entriesContainer.append(card);             
 				*/
-        
+				// DEBUG -----------------------
+				console.log("Debug 2 ");
+				console.log(cardButton);
+				console.log("End Debug 2");
+				// -----------------------------
 			}
 			// Append Created Table to Guestbookentry
 			entriesContainer.append(cardTable); 
@@ -159,7 +167,6 @@ const handleFormSubmitII = event => {
 		else if(xhr.readyState === 4 && xhr.status === 401) {
 			var json2 = JSON.parse(xhr.responseText);
 			console.log("Bad request");
-			window.alert("Error: "  +  json1.nachricht);
 		}
 	}
 };
@@ -181,17 +188,12 @@ const handleFormSubmitIII = event => {
 		if (xhr2.readyState === 4 && xhr2.status === 200) {
 			var json1 = JSON.parse(xhr.responseText);
 			console.log("Success request");
-			console.log(json1);/*
-			json1 = json1.daten;
-			json1 = JSON.parse(json1);
-			console.log("stripping json");
-			console.log(json1);*/
+			console.log(json1);
 			renderCars(json1);
 			}
 		else if(xhr2.readyState === 4 && xhr2.status === 401) {
 		  var json2 = JSON.parse(xhr2.responseText);  
 		  console.log("Bad request");
-		  //window.alert("Error: "  +  json2.nachricht);
 		}    		
 	}
 };
@@ -199,7 +201,6 @@ const handleFormSubmitIII = event => {
 const form = document.getElementsByClassName('suchform')[0];
 form.addEventListener('submit', handleFormSubmitII);
 const form_searchbar = document.getElementsByClassName('form-inline')[0];
-//console.log(form_searchbar);
 form_searchbar.addEventListener('submit', handleFormSubmitIII);
 
 
