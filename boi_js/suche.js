@@ -30,9 +30,21 @@ function renderCars(cars) {
         console.log("Entry "+i)*/
         
         const cardDiv = $('<div class="table-responsive greybackground" style="width: 80%;" />');
-        const cardTable = $('<table class="table" width="90% />');
-        const cardTableRow = $('<tr/>');
-        const cardTD = $('<td width="35%"><img src=boi_bilder/'+ cars[i].Bild +' width="500px" alt="AutoBild" />');
+        //const cardTable = $('<table class="table" width="90% />');
+        const cardTable = document.createElement("table");
+        cardTable.class = "table";
+        cardTable.width = "90%";
+        //const cardTableRow = $('<tr/>');
+        const cardTableRow = document.createElement("tr");
+
+        const cardTD = $('<td width="35%"/>');
+        
+
+        const cardBild = $('<img src=boi_bilder/'+ cars[i].Bild +' width="500px" alt="AutoBild" />');
+        
+        //const cardTD = document.createElement("td");
+        //cardTD.width("35%")
+
         const cardTD2 = $('<td id="greyinbox" width="55%" />');
         const cardP = $('<p> </p>');
         const cardh2 = $('<h2  style="color:red; text-align:center;" />');
@@ -41,23 +53,18 @@ function renderCars(cars) {
         
         card.append(cardHeader);
         cardA.append(cardButton.text("Zum Deal"));
-        cardh2.append(cardA);
-        console.log(cardh2)
+        cardh2.append(cardA);        
         cardh2.text("Preis: " + cars[i].Preis);
         cardP.text(cars[i].Marke + cars[i].Modell);
         cardTD2.append(cardP);
-        cardTD.append(cardTD2);
-        console.log(cardTD);
+        cardTD.append(cardBild);
+        cardTD.append(cardTD2);        
         cardTableRow.append(cardTD);
-        cardTable.append(cardTableRow);
-        console.log("Ich bin hier" + cardTable); 
-        cardDiv.append(cardTable);
-        console.log(cardDiv);
-        cardBody.append(cardDiv);
-        console.log(cardBody); 
+        cardTable.append(cardTableRow);         
+        cardDiv.append(cardTable);        
+        cardBody.append(cardDiv);        
         card.append(cardBody);        
-        entriesContainer.append(card);
-                 
+        entriesContainer.append(card);             
 
         
 		  }
