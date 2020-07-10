@@ -67,7 +67,7 @@
 			<table id="auswahl" cellspacing="25">
 				<tr>
 					<th>
-						Danke für Ihren Kauf, $NamevonKäufer!<br>Ihre Bestellung ist bestätigt.<br><br>
+						Danke für Ihren Kauf!<br>Ihre Bestellung ist bestätigt.<br><br>
 					</th>
 
 					<th><br>
@@ -93,7 +93,7 @@
 				<tr>
 					<th>Ihre Daten:<br>
                     </th>
-                    <th>$NamevonKäufer</th>
+                    <th id="name"></th>
                     <th>$AdressevonKäufer</th>
                     <th></th>
                 </tr>
@@ -126,9 +126,9 @@
 			window.alert("Bitte loggen Sie sich erst ein!");
 		}
 		else{
-		var name = document.getElementById("name");
-		name = localStorage.getItem("vorname") + " " + localStorage.getItem("nachname");
-		name.innerHTML(name);
+		var name1 = document.getElementById("name");
+		var name = localStorage.getItem("vorname") + " " + localStorage.getItem("nachname");
+		name1.innerHTML(name);
 		}
 	</script>
 </body>
