@@ -83,15 +83,15 @@ function renderCars(cars) {
   suchContainer.empty();
   entriesContainer.empty();
   //cardHeader.text("Eintrag #" + cars);
-  if(cars.modell == undefined){
-	  if(cars.0.modell == undefined){
+  if(cars.modell === undefined){
+	  if(cars[0].modell === undefined){
 			cardHeader.text("No Results Found");
 			card.append(cardHeader);
 			entriesContainer.append(card);
 		}else{
 			var i;
 			for(i=0;i<cars.length;i++){
-				cardHeader.text(cars.i.modell)
+				cardHeader.text(cars[i].modell)
 				card.append(cardHeader);
 				entriesContainer.append(card);
 		  }
