@@ -19,10 +19,13 @@ function renderCars(cars) {
 	if(cars.Modell == undefined){
 		if(Object.keys(cars).length === 0){
 			// 0 Results
-			cardHeader.text("No Results Found");
-			card.append(cardHeader);
+			const Message = document.createElement("p");
+			Message.innerHTML = "No Searchresults found <br> Back to Home: <a href=\"Home.html\">Home</a>";
+			Message.style.color = "black";
+			Message.style.alignText = "center";
+			card.append(Message);
 			entriesContainer.append(card);
-			console.log("Found 0 Entry");
+
 		}else{
 			// 2+ Results
 			// Create Table for Results
