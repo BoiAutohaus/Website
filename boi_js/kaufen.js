@@ -20,7 +20,7 @@
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
           var json1 = JSON.parse(xhr.responseText);
-          window.alert(data.vorname + " " +  data.nachname + ", Kaufauftrag wurde übermittelt");
+          window.alert(localStorage.getItem("vorname") + " " +  localStorage.getItem("nachname") + ", Kaufauftrag wurde übermittelt");
           console.log(json1);
 		  window.location.href = "Kaufbestatigung.html";
           localStorage.setItem("Vorname", data.vorname);
