@@ -66,7 +66,7 @@ function renderCars(cars) {
 				// Create Headline (Preistag) 
 				const cardh2 = document.createElement("h2");
 				cardh2.style.color = "red";
-				cardh2.style.float = "center";
+				cardh2.style.float = "right";
 				cardh2.innerHTML = "Preis: " + cars[i].Preis+"€";
 				
 				// Create Button for Link
