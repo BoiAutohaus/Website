@@ -22,68 +22,79 @@ function renderCars(cars) {
 		}else{
 			//const cardTable = $('<table class="table" width="90% />');
 			const cardTable = document.createElement("table");
-			cardTable.class = "table";
+			cardTable.class = "table table-responsive greybackground";
 			cardTable.width = "90%";
 			var i;
 			for(i=0;i<Object.keys(cars).length;i++){
-				/*cardHeader.text(cars[i].Modell)
+				// DEBUG ---------------------
+				console.log("Found x Entries");
+				console.log("Debug, Entry: "+ i);
+				console.log(cars[i]);
 				console.log(cars[i].Modell);
-				card.append(cardHeader);
-				entriesContainer.append(card);
-				console.log("Entry "+i)*/
-				
+				console.log("Debug Ende");
+				//----------------------------
 				//const cardDiv = $('<div class="table-responsive greybackground" style="width: 80%;" />');
-				const cardDiv = document.createElement("div");
+				/*const cardDiv = document.createElement("div");
 				cardDiv.class = "table-responsive greybackground";
 				cardDiv.style = "width: 80%";
-
+					*/
 				
-				//cardTable.appendChild(cardTableRow);
-				//const cardTableRow = $('<tr/>');
-				const cardTableRow = document.createElement("tr");
-				//cardTableRow.appendChild(cardTD);
 
-				//const cardTD = $('<td width="35%"/>');
+				// Create Table Row
+				const cardTableRow = document.createElement("tr");
+
+
+				// Create Table Column
 				const cardTD = document.createElement("td");
 				cardTD.width = "35%";  
-				/*cardTD.appendChild(cardBild);
-				cardTD.appendChild(cardTD);  */ 
 
-				//const cardBild = $('<img src=boi_bilder/'+ cars[i].Bild +' width="500px" alt="AutoBild" />');
+				// Create Picture
 				const cardBild = document.createElement("img");
 				cardBild.src = "boi_bilder/" + cars[i].Bild;
 				cardBild.width = "500px";
 				cardBild.alt = "AutoBild";
 				
-				
-				//const cardTD2 = $('<td id="greyinbox" width="55%" />');
+				// Create 2nd Column
 				const cardTD2 = document.createElement("td");
 				cardTD2.id = "greyinbox";
 				cardTD2.width = "35%";
-				//cardTD2.appendChild(cardP);
 
-				
-				//const cardP = $('<p> </p>');
+				// Create Paragraph with Text
 				const cardP = document.createElement("p");
 				//cardP.text(cars[i].Marke + cars[i].Modell);
 				//cardP.appendChild(cardh2);
 				
-				//const cardh2 = $('<h2  style="color:red; text-align:center;" />');
+				// Create Headline in Paragraph
 				const cardh2 = document.createElement("h2");
 				cardh2.style = "color:red; text-align:center;";
-				/*cardh2.appendChild(cardA); 
-				cardh2.text("Preis: " + cars[i].Preis);*/
+				//cardh2.innerHTML("Preis: " + cars[i].Preis);
 				
-				//const cardA = $('<a href="ZumDeal_MBAK.html" />');
-				const cardA = document.createElement("a");
-				cardA.href = "ZumDeal_MBAK.html";
-				//cardA.appendChild(cardButton);
-
-				//const cardButton = $('<button type="button"/> ');
+				// Create Button for Link
 				const cardButton = document.createElement("button");
-				cardButton.type = "button";
+				cardButton.type = "button submit";
+				cardButton.class = "btn-primary";
 				//cardButton.text("Zum Deal");
 				
+				// Create Link to Buypage
+				const cardA = document.createElement("a");
+				cardA.href = "ZumDeal_MBAK.html";
+				
+				// Append Button To Link
+				cardA.appendChild(cardButton);
+				// Append Link and Headline to Paragraph
+				cardP.appendChild(cardh2);
+				cardP.appendChild(cardA);
+				// Append Paragraph to Column 2
+				cardTD2.appendChild(cardP);
+				// Append Image to Column 1
+				cardTD.appendChild(cardBild);
+				// Append Column 1 & 2 to TableRow
+				cardTableRow.appendChild(cardTD);
+				cardTableRow.appendChild(cardTD2);
+				// Append TableRow to Table
+				cardTable.append(cardTableRow);
+				
+				/*
 				card.appendChild(cardHeader);
 				cardA.appendChild(cardButton.text("Zum Deal"));
 				cardh2.appendChild(cardA);        
@@ -98,13 +109,11 @@ function renderCars(cars) {
 				cardBody.appendChild(cardDiv);        
 				card.appendChild(cardBody);        
 				entriesContainer.append(card);             
-
+				*/
         
 			}
-			console.log("Entry: "+i);
+			entriesContainer.append(cardTable); 
 		}
-		console.log("Found x Entries");
-		console.log(cars[0]);
 	}else{
 		cardHeader.text(cars.modell+":<br><br>"+"Co2 Emissionen<br>"+"KraftstoffVerbrauch<br><br>"+cars.sprit+"<br>"+"Baujahr<br><br><br>"); 
 		card.append(cardHeader);
