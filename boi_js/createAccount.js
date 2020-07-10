@@ -1,3 +1,5 @@
+const { json } = require("body-parser");
+
 const isValidElement = element => {
   return element.name && element.value;
 };
@@ -30,7 +32,7 @@ const handleFormSubmit = event => {
 			console.log(myJSON);
 			localStorage.setItem("Vorname", data.vorname);
 			localStorage.setItem("Nachname", data.nachname);
-			//localStorage.setItem("Adresse",)
+			
 
 		}
 		else if(xhr.readyState === 4 && xhr.status === 400) {
@@ -55,6 +57,8 @@ const handleAnSubmit = event => {
 	xhr2.onreadystatechange = function () {
 		if (xhr2.readyState === 4 && xhr2.status === 200) {
 			var json1 = JSON.parse(xhr2.responseText);
+			localStorage.setItem("vorname", json1.vorname);
+			localStorage.setItem("nachname", json1.nachname);
 			window.alert(data2.mail + ", Sie haben sich efolgreich angemeldet "+ json1.mail);
 			}
 		else if(xhr2.readyState === 4 && xhr2.status === 401) {
