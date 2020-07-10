@@ -248,7 +248,7 @@ const handleFormSubmitIII = event => {
     xhr2.send(myJSON)
     xhr2.onreadystatechange = function () {
 		if (xhr2.readyState === 4 && xhr2.status === 200) {
-			var json1 = JSON.parse(xhr.responseText);
+			var json1 = JSON.parse(xhr2.responseText);
 			console.log("Success request");
 			console.log(json1);
 			renderCars(json1);
