@@ -14,19 +14,23 @@ const isValidElement = element => {
   const handleFormSubmit3 = event => {
       
       event.preventDefault();
+	  /*
       const data = formToJSON(form.elements);
       var myJSON = JSON.stringify(data);      
       console.log(myJSON);
+	  */
+	  
+	  var car1 = '{"id": '+$(#carid).name+'}'; 
       var xhr = new XMLHttpRequest();
       var url = "http://localhost:8000/api/buy";
       xhr.open("POST", url, true);
       xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.send(myJSON)
+      xhr.send(car1)
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
           var json1 = JSON.parse(xhr.responseText);
           window.alert(data.vorname + " " +  data.nachname + ", Kaufauftrag wurde übermittelt");
-          console.log(myJSON);
+          console.log(json1);
           localStorage.setItem("Vorname", data.vorname);
           localStorage.setItem("Nachname", data.nachname);          
     
