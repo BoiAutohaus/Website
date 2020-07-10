@@ -12,9 +12,10 @@ const isValidElement = element => {
   
   
   const handleFormSubmit = event => {
+      
       event.preventDefault();
       const data = formToJSON(form.elements);
-      var myJSON = JSON.stringify(data);
+      var myJSON = JSON.stringify(data);      
       console.log(myJSON);
       var xhr = new XMLHttpRequest();
       var url = "http://localhost:8000/api/buy";
